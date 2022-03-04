@@ -40,8 +40,8 @@ function App() {
       }
     }
     setLoading(false);
-    console.log("loadedPages", loadedPages);
-    console.log("currentPage", currentPage);
+    // console.log("loadedPages", loadedPages);
+    // console.log("currentPage", currentPage);
   };
 
   const loadPokemons = async function(){
@@ -51,7 +51,7 @@ function App() {
       setPrevPageUrl(data.previous);
       createPokemon(data.results);
       loadedPages = loadedPages + 1;
-      console.log('why loaded pages', loadedPages)
+      // console.log('new loaded pages', loadedPages)
 
       // Função que pega os detalhes dos 20 pokemons
       function createPokemon(results) {
