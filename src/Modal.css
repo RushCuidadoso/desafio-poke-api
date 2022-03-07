@@ -1,0 +1,23 @@
+.container{
+    display: inline-flex;
+    width: 100%;
+}
+
+.container img{
+    width: 50%;
+}
+
+.container-details{
+    width: 100%;
+    text-align: center;
+}
+
+.container-details h2{
+    text-transform: capitalize;
+}
+
+.button-modal{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}

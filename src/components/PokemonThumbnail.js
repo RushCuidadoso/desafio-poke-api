@@ -1,9 +1,22 @@
 import React, { useState } from 'react'
 import Modal from '../Modal'
 
+var data
+
 const PokemonThumbnail = ({ id, name, image, type }) => {
   const [isOpen, setIsOpen] = useState(false)
   const style = `thumb-container ${type}`
+
+  const getData = async function(){
+      data = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      .then(response => response.json())
+      .then(response => {
+        return (response)
+      })
+      console.log(data)
+      setIsOpen(true)
+  }
+
   return (
     <>
     <div className={style}>
@@ -17,12 +30,12 @@ const PokemonThumbnail = ({ id, name, image, type }) => {
         <h3>{name}</h3>
         <small>Type: {type}</small>
         <div>
-          <button onClick={() => setIsOpen(true)}>More</button>
+          <button onClick={() => {getData()}}>More</button>
         </div>
       </div>
     </div>
 
-    <Modal open ={isOpen} onClose={() => setIsOpen(false)} info={id}/>
+    <Modal open = {isOpen} onClose={() => setIsOpen(false)} info={data}/>
     </>
   )
 }

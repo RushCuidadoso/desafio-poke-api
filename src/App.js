@@ -91,6 +91,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
     getAllPokemons();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
 
